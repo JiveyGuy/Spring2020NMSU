@@ -1,0 +1,29 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Q_HIGH",
+					"strict" : false
+				},
+				{
+					"name" : "Q_LOW",
+					"strict" : false
+				},
+				{
+					"name" : "Data",
+					"strict" : false
+				},
+				{
+					"name" : "Gate",
+					"strict" : false
+				},
+				{
+					"name" : "Reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
