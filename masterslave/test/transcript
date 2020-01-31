@@ -1,0 +1,211 @@
+# Compile of Translatch.vhd was successful.
+# Compile of MasterSlave.vhd failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of Translatch.vhd was successful.
+# Compile of MasterSlave.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.masterslave
+# vsim -gui work.masterslave 
+# Start time: 17:08:07 on Jan 30,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.masterslave(behavioral)
+# Loading work.translatch(behavioralr)
+quit -sim
+# End time: 17:08:23 on Jan 30,2020, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 0
+add wave -position insertpoint {{LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ 
+ENTITY TestMasterSlave IS
+END TestMasterSlave;
+ 
+ARCHITECTURE behavior OF TestMasterSlave IS 
+ 
+    -- Component Declaration for the Unit Under Test (UUT)
+     COMPONENT TransLatch
+    	PORT(
+         	Data : IN  std_logic;
+         	Gate : IN  std_logic;
+         	Reset : IN  std_logic;
+         	Q_HIGH : OUT  std_logic;
+		Q_LOW :  OUT std_logic
+        );
+    END COMPONENT;
+
+   --Inputs
+   signal Data : std_logic := '0';
+   signal Gate : std_logic := '0';
+   signal Reset : std_logic := '0';
+
+   --Outputs
+   signal Q_HIGH : std_logic;
+   signal Q_LOW : std_logic;
+
+ 
+BEGIN
+   -- Instantiate the Unit Under Test (UUT)
+   uut: TransLatch PORT MAP (
+          Data => Data,
+          Gate => Gate,
+          Reset => Reset,
+          Q_HIGH => Q_HIGH,
+	  Q_LOW => Q_LOW
+        );
+
+   stim_proc: process begin
+   	   wait for 10ns;
+	   Reset<='0';
+	   wait for 5ns;
+		
+	   Reset<='1';
+	   Data<='1';
+	   Gate<='0';
+           wait for 5ns;
+		
+	   Gate<='1';
+	   wait for 5ns;
+		
+	   Data<='0';
+	   Gate<='1';
+	   wait for 5ns;
+	
+	   Gate<='0';
+   end process;
+END;}}
+# Compile of Translatch.vhd was successful.
+# Compile of MasterSlave.vhd was successful.
+# Compile of MasterSlave_TB.vhd failed with 3 errors.
+# 3 compiles, 1 failed with 3 errors.
+# Compile of Translatch.vhd was successful.
+# Compile of MasterSlave.vhd was successful.
+# Compile of MasterSlave_TB.vhd was successful with warnings.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.testmasterslave
+# vsim -gui work.testmasterslave 
+# Start time: 17:19:27 on Jan 30,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testmasterslave(behavior)
+# Loading work.masterslave(behavioral)
+# Loading work.translatch(behavioralr)
+vsim -gui work.masterslave
+# End time: 17:21:02 on Jan 30,2020, Elapsed time: 0:01:35
+# Errors: 0, Warnings: 0
+# vsim -gui work.masterslave 
+# Start time: 17:21:03 on Jan 30,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.masterslave(behavioral)
+# Loading work.translatch(behavioralr)
+add wave -position insertpoint sim:/masterslave/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Break key hit
+reset -f
+# ambiguous command name "reset": resetGlobalEvcd resetTime
+restart -f
+run
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+quit -sim
+# End time: 17:26:43 on Jan 30,2020, Elapsed time: 0:05:40
+# Errors: 1, Warnings: 0
+vsim -gui work.testmasterslave
+# vsim -gui work.testmasterslave 
+# Start time: 17:26:49 on Jan 30,2020
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.testmasterslave(behavior)
+# Loading work.masterslave(behavioral)
+# Loading work.translatch(behavioralr)
+add wave -position insertpoint sim:/testmasterslave/*
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
