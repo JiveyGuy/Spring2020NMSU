@@ -1,6 +1,7 @@
+
 -- Testbench automatically generated online
 -- at http://vhdl.lapinoo.net
--- Generation date : 13.2.2020 23:43:24 GMT
+-- Generation date : 13.2.2020 23:47:30 GMT
 
 library ieee;
 use ieee.std_logic_1164.all;
@@ -27,10 +28,6 @@ architecture tb of tb_ALU_ADD is
     signal Rout : std_logic_vector (31 downto 0);
     signal Stat : stat_signl_rec;
 
-    constant TbPeriod : time := 1000 ns; -- EDIT Put right period here
-    signal TbClock : std_logic := '0';
-    signal TbSimEnded : std_logic := '0';
-
 begin
 
     dut : ALU_ADD
@@ -40,12 +37,6 @@ begin
               Rout => Rout,
               Stat => Stat);
 
-    -- Clock generation
-    TbClock <= not TbClock after TbPeriod/2 when TbSimEnded /= '1' else '0';
-
-    --  EDIT: Replace YOURCLOCKSIGNAL below by the name of your clock as I haven't guessed it
-    --  YOURCLOCKSIGNAL <= TbClock;
-
     stimuli : process
     begin
         -- EDIT Adapt initialization as needed
@@ -53,19 +44,12 @@ begin
         Bin <= (others => '0');
         Func <= (others => '0');
 
-        -- Reset generation
-        --  EDIT: Replace YOURRESETSIGNAL below by the name of your reset as I haven't guessed it
-        YOURRESETSIGNAL <= '1';
-        wait for 100 ns;
-        YOURRESETSIGNAL <= '0';
-        wait for 100 ns;
-
         -- EDIT Add stimuli here
-        wait for 100 * TbPeriod;
-
-        -- Stop the clock and hence terminate the simulation
-        TbSimEnded <= '1';
-        wait;
+	wait for 5ns;
+	Ain  <= x"00000001";
+	Bin  <= x"00000001";
+	Func <= ALU_FUNC_ADD;
+	wait for 5ns;
     end process;
 
 end tb;
